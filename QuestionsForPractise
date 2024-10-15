@@ -1,0 +1,103 @@
+Basic Level Questions
+-----------------------
+Create a Coupons table with fields: coupon_id, code, discount, and expiration_date.
+Modify the Products table to set the default stock value to 10.
+Add a foreign key in the Orders table to link it to a new Shipping table that you will create.
+Remove the email column from the Users table.
+Change the data type of the price column in the Products table to DECIMAL(12, 2).
+
+Insert 5 new categories into the Categories table with unique names.
+Update the Users table to set the last_name of all users with first_name = 'John' to Doe.
+Delete products that have a stock of 0 from the Products table.
+Write a query to fetch all orders from the last 7 days from the Orders table.
+Insert a new review into the Reviews table with a rating of 5 for an existing product.
+
+Start a transaction, update the stock for multiple products, and commit the changes.
+Rollback a transaction if a user tries to make multiple orders in a short span.
+Write a query that ensures any order above $500 requires manual approval, using SAVEPOINT and ROLLBACK TO SAVEPOINT.
+
+Create a Vouchers table that ensures voucher_code is unique and cannot be NULL.
+Add a CHECK constraint to the Orders table to ensure that the total is always greater than 0.
+Add a DEFAULT constraint to set the status column in the Orders table to 'Pending' if not provided.
+
+Write a query to list all products and their respective categories.
+Fetch all users who placed an order in the last month.
+Write a query to find all users who have never made an order.
+Write a query to fetch all the products that cost more than $50.
+
+Intermediate Level Questions
+-----------------------------
+Window Functions
+
+Write a query to calculate the cumulative sum of payments made by each user in the Payments table.
+Use a window function to retrieve the rank of products based on their sales in the Order_Items table.
+Calculate the running total of orders made by each user using window functions.
+Write a query to find the average review rating per product, with the highest-rated product appearing first.
+
+Joins
+
+Write a query that joins Orders, Users, and Payments to display the user name, order ID, and total payment amount.
+Write a query to find all users who have placed an order but have never reviewed a product, using LEFT JOIN.
+Perform an INNER JOIN between Categories and Products to retrieve all products under the 'Electronics' category.
+Write a query that lists all orders with their corresponding user names and product names using multiple joins.
+Views
+Create a view called ActiveOrders that shows all orders with a status of 'Pending' or 'Shipped'.
+Write a view called TopUsers that displays the top 10 users based on the total amount spent in Payments.
+Create a view that shows the total number of products in each category.
+Subqueries
+Write a query using a subquery to find products that are priced higher than the average price of all products.
+Write a query to retrieve all users who have placed more than 3 orders in the past year using a subquery.
+Use a subquery to find all users who haven't made a payment yet but have placed an order.
+Write a query using a correlated subquery to fetch the latest review for each product.
+Complex DML
+Write a query to increase the price of all products by 10% in the Products table, but only for products in stock.
+Write a query to delete all reviews that have a rating of 1 for products in the 'Clothing' category.
+Update the Orders table to change the status of all orders that are more than 30 days old to 'Cancelled'.
+TCL
+Use SAVEPOINT in a transaction to update user details in the Users table and rollback only specific changes if needed.
+Create a transaction where a new order is added to Orders and the stock for the product is deducted from Products. Rollback the transaction if stock goes negative.
+Advanced Level Questions
+Window Functions
+Write a query to rank users based on their total payments and display the top 10 spenders.
+Use window functions to find the percentage of total sales for each product compared to the overall sales.
+Calculate the moving average of product prices in the Products table over time.
+Write a query using window functions to calculate the difference in payments between consecutive orders for each user.
+Triggers
+Write a trigger to update the stock in the Products table after a new entry is added to Order_Items.
+Create a trigger that prevents the deletion of a product if it has active orders.
+Write a trigger that automatically calculates the total payment amount after an order is inserted into Order_Items.
+Create a trigger to log changes in the Users table into a separate UserLog table.
+Stored Procedures & Functions
+Write a stored procedure that takes a user_id and returns all orders placed by that user.
+Create a stored function that calculates the total revenue for a given product.
+Write a stored procedure that adds a new user and generates a random password.
+Create a stored procedure to bulk-insert new products into the Products table.
+Normalization
+Analyze the Orders table for normalization and suggest how it could be decomposed into smaller tables following 3NF.
+Given the Reviews table, suggest a normalization strategy to handle review metadata (like upvotes and downvotes).
+Normalize the Cart table and explain why the normalization improves data integrity.
+Complex Joins and Queries
+Write a query that returns the top 5 products with the highest number of reviews and their average rating.
+Write a query that retrieves all users who have placed an order, but only for products that are in the 'Electronics' category.
+Create a query that returns users who have spent more than $1000 but haven't placed an order in the last 6 months.
+Write a query that shows the total payments made by each user, their total orders, and their total reviews in a single result set.
+Retrieve all products that have never been ordered, along with their category names.
+Advanced Subqueries and CTEs
+Write a WITH query (CTE) to get the top 3 products by sales for each category.
+Write a subquery to find users who have reviewed more than 5 products and have an average rating higher than 4.
+Use a CTE to calculate the average amount spent per user over time, and filter users whose average is above $500.
+Write a subquery to find products that are priced below the average for their category.
+Triggers & Auditing
+Create a trigger to log all updates made to the Payments table into a new PaymentsAudit table.
+Write a trigger that prevents updates to Order_Items if the quantity exceeds the available stock in Products.
+Create a trigger to send an email notification (simulated with a log table) when an order status is updated to 'Shipped'.
+Optimization and Performance
+Write an index to speed up queries that retrieve products by category.
+Analyze a query that retrieves orders by date and suggest ways to improve performance with indexes.
+Write an optimized query to calculate the total revenue for each product, ensuring it scales for large datasets.
+Bonus: Scenario-Based SQL Questions
+Write a query to simulate Black Friday by applying a 20% discount to all products that are currently in stock.
+Create a monthly sales report using a CTE that shows the total revenue per month for the last year.
+Write a query to find customers who made a purchase within 7 days of signing up for an account.
+Write a query to find the products that had no reviews last month but have reviews this month.
+Write a query that tracks users who abandoned their carts without placing an order in the last 30 days.
